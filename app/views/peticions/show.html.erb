@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @peticion.tipo %>
+</p>
+
+<p>
+  <strong>Fechadesde:</strong>
+  <%= @peticion.fechadesde %>
+</p>
+
+<p>
+  <strong>Fechahasta:</strong>
+  <%= @peticion.fechahasta %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @peticion.status %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @peticion.email %>
+</p>
+
+<%= link_to 'Edit', edit_peticion_path(@peticion) %> |
+<%= link_to 'Back', peticions_path %>
