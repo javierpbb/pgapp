@@ -5,7 +5,7 @@ class PeticionsController < ApplicationController
   # GET /peticions.json
   def index
      #@peticions = Peticion.all
-     @peticions = Peticion.order('id DESC').take(10)
+     @peticions = Peticion.order('id DESC').take(4)
   end
 
   # GET /peticions/1

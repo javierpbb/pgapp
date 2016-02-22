@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Id:</strong>
-  <%= @peticion.id %>
-</p>
-
-<p>
   <strong>Tipo:</strong>
   <%= @peticion.tipo %>
 </p>

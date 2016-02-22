@@ -1,16 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lista de Peticiones</h1>
+<h1>Listing Peticions</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Id</th>
       <th>Tipo</th>
-      <th>Fecha Desde</th>
-      <th>Fecha Hasta</th>
+      <th>Fechadesde</th>
+      <th>Fechahasta</th>
       <th>Status</th>
-      <th>E-mail</th>
+      <th>Email</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,7 +17,6 @@
   <tbody>
     <% @peticions.each do |peticion| %>
       <tr>
-        <td><%= peticion.id %></td>
         <td><%= peticion.tipo %></td>
         <td><%= peticion.fechadesde %></td>
         <td><%= peticion.fechahasta %></td>
