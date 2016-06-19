@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218100414) do
+ActiveRecord::Schema.define(version: 20160618210419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,15 +22,6 @@ ActiveRecord::Schema.define(version: 20160218100414) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "peticion", id: false, force: :cascade do |t|
-    t.text    "tipo"
-    t.integer "petid",      limit: 2, default: "nextval('peticion_petid_seq'::regclass)", null: false
-    t.date    "fechadesde"
-    t.date    "fechahasta"
-    t.integer "status",     limit: 2, default: 0
-    t.text    "email"
-  end
-
   create_table "peticions", force: :cascade do |t|
     t.string   "tipo"
     t.date     "fechadesde"
@@ -39,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160218100414) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "prioridad"
   end
 
 end

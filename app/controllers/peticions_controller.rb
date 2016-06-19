@@ -1,11 +1,14 @@
+require 'pet5.rb'
+
 class PeticionsController < ApplicationController
   before_action :set_peticion, only: [:show, :edit, :update, :destroy]
 
   # GET /peticions
   # GET /peticions.json
   def index
+     #Cambios en el index para limitar los registros y hacerlo descendente
      #@peticions = Peticion.all
-     @peticions = Peticion.order('id DESC').take(10)
+     @peticions = Peticion.order('id DESC').take(20)
   end
 
   # GET /peticions/1
@@ -31,6 +34,15 @@ class PeticionsController < ApplicationController
       if @peticion.save
         format.html { redirect_to @peticion, notice: 'Peticion was successfully created.' }
         format.json { render :show, status: :created, location: @peticion }
+
+        #llamar script nueva peticions
+        puts @peticion.tipo
+        case @peticion.tipo
+        when "5"
+            pet5( @peticion.tipo, "fechahasta")
+          else
+            puts "Este gilipollas me toma el pelo"
+        end
       else
         format.html { render :new }
         format.json { render json: @peticion.errors, status: :unprocessable_entity }
@@ -70,6 +82,6 @@ class PeticionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def peticion_params
-      params.require(:peticion).permit(:tipo, :fechadesde, :fechahasta, :status, :email)
+      params.require(:peticion).permit(:tipo, :fechadesde, :fechahasta, :status, :email, :prioridad)
     end
 end

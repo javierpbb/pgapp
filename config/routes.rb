@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :peticions
   get 'home/index'
 
   resources :peticions

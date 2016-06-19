@@ -11,6 +11,7 @@
       <th>Fecha Hasta</th>
       <th>Status</th>
       <th>E-mail</th>
+      <th>Prioridad</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,6 +25,7 @@
         <td><%= peticion.fechahasta %></td>
         <td><%= peticion.status %></td>
         <td><%= peticion.email %></td>
+        <td><%= peticion.prioridad %></td>
         <td><%= link_to 'Show', peticion %></td>
         <td><%= link_to 'Edit', edit_peticion_path(peticion) %></td>
         <td><%= link_to 'Destroy', peticion, method: :delete, data: { confirm: 'Are you sure?' } %></td>

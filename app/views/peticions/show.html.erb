@@ -30,5 +30,10 @@
   <%= @peticion.email %>
 </p>
 
+<p>
+  <strong>Prioridad:</strong>
+  <%= @peticion.prioridad %>
+</p>
+
 <%= link_to 'Edit', edit_peticion_path(@peticion) %> |
 <%= link_to 'Back', peticions_path %>
