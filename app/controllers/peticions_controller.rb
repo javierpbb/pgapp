@@ -1,4 +1,5 @@
 require 'pet5.rb'
+require 'pet6.rb'
 
 class PeticionsController < ApplicationController
   before_action :set_peticion, only: [:show, :edit, :update, :destroy]
@@ -37,12 +38,16 @@ class PeticionsController < ApplicationController
 
         #llamar script nueva peticions
         puts @peticion.tipo
+
         case @peticion.tipo
-        when "5"
-            pet5( @peticion.tipo, "fechahasta")
+          when "5"
+            pet5( @peticion.tipo  , "fechahasta")
+          when "6"
+            pet6( @peticion.tipo  , "fechadesde")
           else
             puts "Este gilipollas me toma el pelo"
         end
+
       else
         format.html { render :new }
         format.json { render json: @peticion.errors, status: :unprocessable_entity }
